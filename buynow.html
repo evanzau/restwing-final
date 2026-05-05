@@ -61,19 +61,9 @@
         <p class="product-tagline">Ergonomic Headrest Attachment</p>
 
         <div class="product-price-row">
-          <span class="product-price">$39</span>
+          <span class="product-price">$30</span>
           <span class="product-price-note">Free shipping on all orders</span>
-          <span
-            id="stock-badge"
-            class="stock-badge"
-            style="display: none"
-          ></span>
         </div>
-        <p id="out-of-stock-msg" class="out-of-stock-msg" style="display: none">
-          This product is currently out of stock. Join the
-          <a href="index.html#waitlist">waitlist</a> to be notified when it's
-          back.
-        </p>
 
         <p class="product-desc">
           The clip-on headrest attachment that provides adjustable lateral head
@@ -91,21 +81,12 @@
           </div>
         </div>
 
-        <!-- Quantity -->
-        <div class="option-group">
-          <p class="option-label">Quantity</p>
-          <div class="qty-row">
-            <span class="qty-btn" id="qty-minus">&#8722;</span>
-            <span class="qty-num" id="qty-num">1</span>
-            <span class="qty-btn" id="qty-plus">&#43;</span>
-          </div>
-        </div>
-
-        <!-- CTA Buttons -->
-        <div class="buy-buttons">
-          <a href="checkout.html?qty=1" class="btn-buy-primary" id="add-to-bag-btn">Add to Bag</a>
-          <a href="checkout.html?qty=1" class="btn-buy-secondary" id="buy-now-btn">Buy Now</a>
-        </div>
+        <!-- Waitlist CTA -->
+        <form id="waitlist-form" class="waitlist-form-product">
+          <input type="email" id="waitlist-email" placeholder="Enter your email" required>
+          <button type="submit" class="btn-buy-primary">Join the Waitlist</button>
+        </form>
+        <p id="waitlist-msg" class="waitlist-msg" style="display:none;">&#10003; You're on the list. We'll be in touch.</p>
 
         <!-- Trust Badges -->
         <div class="trust-badges">
@@ -230,10 +211,10 @@
 
     <!-- Final CTA Banner -->
     <section class="cta-section">
-      <p class="eyebrow gold center">Available Now</p>
+      <p class="eyebrow gold center">Available 2027</p>
       <h2 class="cta-title">Rest Easy.<br />Rest Anywhere.</h2>
-      <p class="cta-sub">Patent-protected. Ships free. 30-day returns.</p>
-      <a href="#" class="btn-white">Order for $39</a>
+      <p class="cta-sub">Join the waitlist and be first to know when RestWing ships.</p>
+      <a href="#waitlist-form" class="btn-white">Join the Waitlist</a>
     </section>
 
     <!-- Footer -->
@@ -258,26 +239,6 @@
     </footer>
 
     <script type="module" src="auth-nav.js"></script>
-    <script type="module" src="inventory.js"></script>
-    <script>
-      let qty = 1;
-      const qtyNum = document.getElementById("qty-num");
-      const addToBagBtn = document.getElementById("add-to-bag-btn");
-      const buyNowBtn = document.getElementById("buy-now-btn");
-
-      function updateQtyLinks() {
-        qtyNum.textContent = qty;
-        addToBagBtn.href = "checkout.html?qty=" + qty;
-        buyNowBtn.href  = "checkout.html?qty=" + qty;
-      }
-
-      document.getElementById("qty-minus").addEventListener("click", () => {
-        if (qty > 1) { qty--; updateQtyLinks(); }
-      });
-
-      document.getElementById("qty-plus").addEventListener("click", () => {
-        if (qty < 10) { qty++; updateQtyLinks(); }
-      });
-    </script>
+    <script type="module" src="waitlist.js"></script>
   </body>
 </html>
