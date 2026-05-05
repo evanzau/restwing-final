@@ -8,13 +8,12 @@ import { getFirestore } from "https://www.gstatic.com/firebasejs/10.12.0/firebas
 import { getAuth } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyCn5yUFI3uDl58j6AqzI265nMkj59r4bMw",
-    authDomain: "project-restwing.firebaseapp.com",
-    projectId: "project-restwing",
-    storageBucket: "project-restwing.firebasestorage.app",
-    messagingSenderId: "747897648287",
-    appId: "1:747897648287:web:e128af3c0641e5498b5eaa",
-    measurementId: "G-NFPPZ0M2N2"
+    apiKey: "AIzaSyArh4t6jn7TVKQ5ajZVW5D08rRNJgmGCrc",
+    authDomain: "restwing-final-1ce25.firebaseapp.com",
+    projectId: "restwing-final-1ce25",
+    storageBucket: "restwing-final-1ce25.firebasestorage.app",
+    messagingSenderId: "790461939676",
+    appId: "1:790461939676:web:a0932cf3e1d4895d17d919"
 };
 
 // Initialize Firebase
