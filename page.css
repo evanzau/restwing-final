@@ -447,6 +447,97 @@ a {
 }
 
 /* ===========================
+   How To Use Section
+=========================== */
+
+.howto-section {
+    background-color: #0d0d0d;
+    padding: 100px 80px;
+    text-align: center;
+}
+
+.howto-header {
+    margin-bottom: 64px;
+}
+
+.howto-title {
+    font-size: 52px;
+    font-weight: 700;
+    letter-spacing: -1.5px;
+    color: #ffffff;
+    margin-bottom: 16px;
+}
+
+.howto-gold {
+    color: #c8a04b;
+}
+
+.howto-sub {
+    font-size: 18px;
+    font-weight: 300;
+    color: #a0a0a0;
+}
+
+.howto-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.howto-card {
+    background-color: #f0ebe3;
+    border-radius: 20px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.howto-img-wrap {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+}
+
+.howto-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.howto-card-body {
+    padding: 24px 20px 28px;
+}
+
+.howto-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 2px solid #c8a04b;
+    color: #c8a04b;
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 14px;
+}
+
+.howto-step-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1d1d1f;
+    margin-bottom: 6px;
+}
+
+.howto-step-sub {
+    font-size: 14px;
+    font-weight: 400;
+    color: #6e6e73;
+}
+
+/* ===========================
    In Action Section
 =========================== */
 
@@ -2245,6 +2336,21 @@ a {
     .feature-card {
         max-width: 100%;
         width: 100%;
+    }
+
+    /* --- How To Use Section --- */
+    .howto-section {
+        padding: 60px 24px;
+    }
+
+    .howto-title {
+        font-size: 32px;
+        letter-spacing: -1px;
+    }
+
+    .howto-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
     }
 
     /* --- In Action --- */
