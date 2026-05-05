@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Orders — RestWing</title>
+  <link rel="stylesheet" href="page.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<header class="navbar">
+  <div class="nav-brand">RestWing</div>
+  <nav class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="aboutus.html">About Us</a>
+    <a href="buynow.html" class="nav-cta">Buy Now</a>
+  </nav>
+</header>
+
+<!-- Dashboard Hero -->
+<section class="about-hero" style="padding: 80px 80px 60px 80px;">
+  <p class="eyebrow center">Account</p>
+  <h1 class="about-hero-title" style="font-size:56px;">My Orders</h1>
+  <p class="about-hero-sub" id="dashboard-welcome">Welcome back.</p>
+</section>
+
+<!-- Dashboard Content -->
+<section style="background:#f5f5f7; padding: 0 80px 80px 80px; min-height: 60vh;">
+
+  <!-- Tabs -->
+  <div class="dashboard-tabs">
+    <button class="dashboard-tab active" data-tab="orders">Orders</button>
+    <button class="dashboard-tab" data-tab="profile">Profile</button>
+    <button class="dashboard-tab" data-tab="settings">Shipping</button>
+    <button class="dashboard-tab" data-tab="tracking">Tracking</button>
+  </div>
+
+  <!-- Orders Tab -->
+  <div class="dashboard-panel active" id="orders">
+    <div id="orders-list"></div>
+    <div id="no-orders" style="display:none; text-align:center; padding: 60px 0;">
+      <p style="font-size:18px; color:#888; margin-bottom:24px;">No orders yet.</p>
+      <a href="buynow.html" class="btn-dark">Shop Now</a>
+    </div>
+  </div>
+
+  <!-- Profile Tab -->
+  <div class="dashboard-panel" id="profile">
+    <div class="dashboard-card">
+      <h3 class="dashboard-card-title">My Profile</h3>
+      <div class="dashboard-info-row">
+        <span class="dashboard-info-label">Name</span>
+        <span id="user-name" class="dashboard-info-value">—</span>
+      </div>
+      <div class="dashboard-info-row">
+        <span class="dashboard-info-label">Email</span>
+        <span id="user-email" class="dashboard-info-value">—</span>
+      </div>
+      <div class="dashboard-info-row">
+        <span class="dashboard-info-label">Phone</span>
+        <span id="user-phone" class="dashboard-info-value">—</span>
+      </div>
+    </div>
+    <div class="dashboard-card" style="margin-top:20px;">
+      <h3 class="dashboard-card-title">Saved Address</h3>
+      <div id="saved-address" style="font-size:15px; font-weight:300; color:#555; line-height:1.8;">No address saved yet.</div>
+    </div>
+  </div>
+
+  <!-- Settings Tab -->
+  <div class="dashboard-panel" id="settings">
+    <div class="dashboard-card">
+      <h3 class="dashboard-card-title">Shipping Address</h3>
+      <div class="form-group"><label>Street</label><input id="street" placeholder="123 Main St"></div>
+      <div class="form-group"><label>Apt / Suite <span style="font-weight:300;color:#888;">(optional)</span></label><input id="address2" placeholder="Apt, Suite, etc."></div>
+      <div class="form-row">
+        <div class="form-group"><label>City</label><input id="city" placeholder="City"></div>
+        <div class="form-group form-group-small"><label>State</label><input id="state" placeholder="CA"></div>
+        <div class="form-group form-group-small"><label>ZIP</label><input id="zip" placeholder="90001"></div>
+      </div>
+      <button id="save-address" class="btn-checkout-submit" style="margin-top:8px;">Save Address</button>
+      <p id="save-success" style="display:none; color:#2e7d32; font-weight:500; margin-top:12px;">&#10003; Address saved.</p>
+    </div>
+  </div>
+
+  <!-- Tracking Tab -->
+  <div class="dashboard-panel" id="tracking">
+    <div id="tracking-list"></div>
+    <div id="no-tracking" style="display:none; text-align:center; padding: 60px 0;">
+      <p style="font-size:18px; color:#888;">No active shipments to track.</p>
+    </div>
+  </div>
+
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-top">
+    <span class="footer-brand">RestWing</span>
+    <nav class="footer-nav">
+      <a href="index.html">Home</a>
+      <a href="aboutus.html">About Us</a>
+      <a href="buynow.html">Buy Now</a>
+    </nav>
+  </div>
+  <div class="footer-bottom">
+    <p>Contact: <a href="mailto:contactrestwing@gmail.com">contactrestwing@gmail.com</a></p>
+    <p>&copy; 2026 RestWing. Patent Pending. All rights reserved.</p>
+  </div>
+</footer>
+
+<script type="module" src="dashboard.js"></script>
+<script type="module" src="auth-nav.js"></script>
+
+</body>
+</html>

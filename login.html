@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login — RestWing</title>
+  <link rel="stylesheet" href="page.css">
+</head>
+
+<body>
+    <header class="navbar">
+      <div class="nav-brand">RestWing</div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="aboutus.html">About Us</a>
+        <a href="login.html">Login</a>
+        <a href="signup.html">Sign Up</a>
+        <a href="buynow.html" class="nav-cta">Buy Now</a>
+      </nav>
+    </header>
+
+<section class="features-section">
+
+  <p class="eyebrow center">Welcome Back</p>
+  <h2 class="section-title center">Login</h2>
+
+  <div class="features-grid">
+
+    <div class="feature-card" style="max-width:400px; width:100%;">
+
+      <input id="email" type="email" placeholder="Email"
+        style="width:100%; margin-bottom:12px; padding:12px; border-radius:10px; border:1px solid #e5e5e5;">
+
+      <input id="password" type="password" placeholder="Password"
+        style="width:100%; margin-bottom:20px; padding:12px; border-radius:10px; border:1px solid #e5e5e5;">
+
+      <button onclick="login()" class="btn-dark" style="width:100%;">
+        Login
+      </button>
+
+      <p id="error" style="color:#c0392b; margin-top:10px; display:none;">
+        Invalid email or password
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+<script type="module">
+import { auth, db } from "./firebase.js";
+import { signInWithEmailAndPassword } 
+from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+import { doc, getDoc } 
+from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
+window.login = async function () {
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value.trim();
+  const errorEl = document.getElementById("error");
+
+  try {
+    const userCred = await signInWithEmailAndPassword(auth, email, password);
+
+    const uid = userCred.user.uid;
+    const userDoc = await getDoc(doc(db, "users", uid));
+
+    if (userDoc.exists()) {
+      const role = userDoc.data().role;
+
+      if (role === "admin") {
+        window.location.href = "admin.html";
+      } else {
+        window.location.href = "index.html";
+      }
+    } else {
+      window.location.href = "index.html";
+    }
+
+  } catch (err) {
+    errorEl.style.display = "block";
+  }
+};
+</script>
+
+<script type="module" src="auth-nav.js"></script>
+</body>
+</html>

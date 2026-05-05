@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin — RestWing</title>
+  <link rel="stylesheet" href="page.css">
+</head>
+
+<body>
+<!--Navigation Bar -->
+<header class="navbar">
+  <div class="nav-brand">RestWing</div>
+  <nav class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="aboutus.html">About Us</a>
+    <a href="#" id="logout-btn">Logout</a>
+  </nav>
+</header>
+<!--Dashboard-->
+<section class="about-hero" style="padding: 80px 80px 60px 80px;">
+  <p class="eyebrow center">Admin Panel</p>
+  <h1 class="about-hero-title" style="font-size:56px;">Dashboard</h1>
+  <p class="about-hero-sub">Manage products and orders.</p>
+</section>
+
+<section style="background:#f5f5f7; padding: 0 80px 80px 80px; min-height: 60vh;">
+
+  <!-- Tabs -->
+  <div class="dashboard-tabs">
+    <button class="dashboard-tab active" data-tab="products">Products</button>
+    <button class="dashboard-tab" data-tab="orders">Orders</button>
+    <button class="dashboard-tab" data-tab="add">Add Product</button>
+  </div>
+
+  <!-- PRODUCTS -->
+  <div class="dashboard-panel active" id="products">
+  <div class="dashboard-card">
+    <h3 class="dashboard-card-title">Inventory Overview</h3>
+
+    <table style="width:100%; border-collapse:collapse; margin-top:20px; table-layout:fixed;">
+      <thead>
+        <tr style="text-align:left; border-bottom:1px solid #eee;">
+        <th style="padding:12px; width:30%;">Product</th>
+        <th style="padding:12px; width:15%; text-align:center;">Stock</th>
+        <th style="padding:12px; width:15%; text-align:center;">Price</th>
+        <th style="padding:12px; width:20%; text-align:center;">Inventory Value</th>
+        <th style="padding:12px; width:20%; text-align:center;">Total Sales</th>
+        </tr>
+      </thead>
+
+      <tbody id="products-list"></tbody>
+    </table>
+
+  </div>
+</div>
+
+  <!-- ORDERS -->
+  <div class="dashboard-panel" id="orders">
+  <div class="dashboard-card">
+    <h3 class="dashboard-card-title">All Orders</h3>
+
+    <table style="width:100%; border-collapse:collapse; margin-top:20px;">
+      <thead>
+        <tr style="border-bottom:1px solid #eee;">
+          <th style="padding:12px; text-align:left;">Customer</th>
+          <th style="padding:12px; text-align:center;">Amount</th>
+          <th style="padding:12px; text-align:center;">Status</th>
+          <th style="padding:12px; text-align:center;">Action</th>
+        </tr>
+      </thead>
+
+      <tbody id="orders-list"></tbody>
+    </table>
+
+  </div>
+</div>
+
+  <!-- ADD PRODUCT -->
+  <div class="dashboard-panel" id="add">
+    <div class="dashboard-card">
+      <h3 class="dashboard-card-title">Add / Update Product</h3>
+
+      <div class="form-group">
+        <label>Product ID</label>
+        <input id="product-id">
+      </div>
+
+      <div class="form-group">
+        <label>Product Name</label>
+        <input id="product-name">
+      </div>
+
+      <div class="form-group">
+        <label>Price</label>
+        <input id="product-price" type="number">
+      </div>
+
+      <div class="form-group">
+        <label>Stock</label>
+        <input id="product-stock" type="number">
+      </div>
+
+      <button id="save-product" class="btn-checkout-submit">
+        Save Product
+      </button>
+    </div>
+  </div>
+</section>
+<script type="module" src="admin.js"></script>
+</body>
+</html>

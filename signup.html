@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sign Up — RestWing</title>
+  <link rel="stylesheet" href="page.css">
+</head>
+
+<body>
+
+<header class="navbar">
+    <div class="nav-brand">RestWing</div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="aboutus.html">About Us</a>
+        <a href="login.html">Login</a>
+        <a href="signup.html">Sign Up</a>
+        <a href="buynow.html" class="nav-cta">Buy Now</a>
+      </nav>
+</header>
+
+<section class="features-section">
+
+  <p class="eyebrow center">Create Account</p>
+  <h2 class="section-title center">Sign Up</h2>
+
+  <div class="features-grid">
+
+<div class="feature-card" style="max-width:400px; width:100%;">
+
+  <input id="first-name" placeholder="First Name"
+    style="width:100%; margin-bottom:12px; padding:12px; border-radius:10px; border:1px solid #e5e5e5;">
+
+  <input id="last-name" placeholder="Last Name"
+    style="width:100%; margin-bottom:12px; padding:12px; border-radius:10px; border:1px solid #e5e5e5;">
+
+  <input id="phone" placeholder="Phone Number (optional)"
+    style="width:100%; margin-bottom:12px; padding:12px; border-radius:10px; border:1px solid #e5e5e5;">
+
+  <input id="signup-email" type="email" placeholder="Email"
+    style="width:100%; margin-bottom:12px; padding:12px; border-radius:10px; border:1px solid #e5e5e5;">
+
+  <input id="signup-password" type="password" placeholder="Password"
+    style="width:100%; margin-bottom:12px; padding:12px; border-radius:10px; border:1px solid #e5e5e5;">
+
+  <input id="confirm-password" type="password" placeholder="Confirm Password"
+    style="width:100%; margin-bottom:20px; padding:12px; border-radius:10px; border:1px solid #e5e5e5;">
+
+  <button onclick="signup()" class="btn-dark" style="width:100%;">
+    Create Account
+  </button>
+
+  <p id="signup-success" style="color:#2e7d32; margin-top:10px; display:none; font-weight:500;">
+    Account created successfully! Redirecting...
+  </p>
+
+  <p id="signup-error" style="color:#c0392b; margin-top:10px; display:none;">
+    Please fill all fields correctly.
+  </p>
+
+</div>
+
+</div>
+
+</section>
+
+<script type="module">
+import { auth, db } from "./firebase.js";
+import { createUserWithEmailAndPassword }
+from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+import { doc, setDoc }
+from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
+window.signup = async function () {
+
+  const firstName = document.getElementById("first-name").value.trim();
+  const lastName = document.getElementById("last-name").value.trim();
+  const phone = document.getElementById("phone").value.trim();
+  const email = document.getElementById("signup-email").value.trim();
+  const password = document.getElementById("signup-password").value.trim();
+  const confirmPassword = document.getElementById("confirm-password").value.trim();
+
+  const errorEl = document.getElementById("signup-error");
+  const successEl = document.getElementById("signup-success");
+
+  errorEl.style.display = "none";
+
+  if (!firstName || !lastName || !email || !password || !confirmPassword) {
+    errorEl.innerText = "All fields are required";
+    errorEl.style.display = "block";
+    return;
+  }
+
+  if (password !== confirmPassword) {
+    errorEl.innerText = "Passwords do not match";
+    errorEl.style.display = "block";
+    return;
+  }
+
+  if (password.length < 6) {
+    errorEl.innerText = "Password must be at least 6 characters";
+    errorEl.style.display = "block";
+    return;
+  }
+
+  try {
+    const userCred = await createUserWithEmailAndPassword(auth, email, password);
+
+    await setDoc(doc(db, "users", userCred.user.uid), {
+      firstName,
+      lastName,
+      phone,
+      email,
+      role: "user",
+      createdAt: new Date()
+    });
+
+    successEl.style.display = "block";
+    setTimeout(() => {
+      window.location.href = "index.html";
+    }, 500);
+
+  } catch (err) {
+    console.error(err);
+    errorEl.innerText = "Error creating account (email may already exist)";
+    errorEl.style.display = "block";
+  }
+};
+</script>
+
+</body>
+</html>

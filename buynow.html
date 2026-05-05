@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Buy RestWing — $39</title>
+    <link rel="stylesheet" href="page.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- Sticky Navigation Bar -->
+    <header class="navbar">
+      <div class="nav-brand">RestWing</div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="aboutus.html">About Us</a>
+      </nav>
+    </header>
+
+    <!-- Product Section -->
+    <section class="product-section">
+      <!-- Left: Image Gallery (CSS-only, no JavaScript) -->
+      <div class="gallery">
+        <!-- Radio inputs control which image is shown -->
+        <input type="radio" name="photo" id="p1" checked />
+        <input type="radio" name="photo" id="p2" />
+
+        <!-- Main large image display -->
+        <div class="gallery-main">
+          <img
+            class="gallery-img gallery-img-1"
+            src="restwing-product-photo-one.png"
+            alt="RestWing front view"
+          />
+          <img
+            class="gallery-img gallery-img-2"
+            src="restwing-product-photo-two.png"
+            alt="RestWing side view"
+          />
+        </div>
+
+        <!-- Thumbnail selectors -->
+        <div class="gallery-thumbs">
+          <label for="p1" class="thumb thumb-1">
+            <img src="restwing-product-photo-one.png" alt="View 1" />
+          </label>
+          <label for="p2" class="thumb thumb-2">
+            <img src="restwing-product-photo-two.png" alt="View 2" />
+          </label>
+        </div>
+      </div>
+
+      <!-- Right: Product Details Panel -->
+      <div class="product-panel">
+        <p class="eyebrow">Patent Pending &middot; Pre-Order Now</p>
+        <h1 class="product-name">RestWing</h1>
+        <p class="product-tagline">Ergonomic Headrest Attachment</p>
+
+        <div class="product-price-row">
+          <span class="product-price">$39</span>
+          <span class="product-price-note">Free shipping on all orders</span>
+          <span
+            id="stock-badge"
+            class="stock-badge"
+            style="display: none"
+          ></span>
+        </div>
+        <p id="out-of-stock-msg" class="out-of-stock-msg" style="display: none">
+          This product is currently out of stock. Join the
+          <a href="index.html#waitlist">waitlist</a> to be notified when it's
+          back.
+        </p>
+
+        <p class="product-desc">
+          The clip-on headrest attachment that provides adjustable lateral head
+          and neck support — eliminating neck strain and head bobbing for every
+          passenger, in any vehicle, in under 30 seconds.
+        </p>
+
+        <!-- Color -->
+        <div class="option-group">
+          <p class="option-label">
+            Color &mdash; <span class="option-value">Black</span>
+          </p>
+          <div class="color-options">
+            <div class="color-swatch swatch-black selected" title="Black"></div>
+          </div>
+        </div>
+
+        <!-- Quantity -->
+        <div class="option-group">
+          <p class="option-label">Quantity</p>
+          <div class="qty-row">
+            <span class="qty-btn" id="qty-minus">&#8722;</span>
+            <span class="qty-num" id="qty-num">1</span>
+            <span class="qty-btn" id="qty-plus">&#43;</span>
+          </div>
+        </div>
+
+        <!-- CTA Buttons -->
+        <div class="buy-buttons">
+          <a href="checkout.html?qty=1" class="btn-buy-primary" id="add-to-bag-btn">Add to Bag</a>
+          <a href="checkout.html?qty=1" class="btn-buy-secondary" id="buy-now-btn">Buy Now</a>
+        </div>
+
+        <!-- Trust Badges -->
+        <div class="trust-badges">
+          <div class="badge">
+            <span class="badge-icon">&#9668;</span>
+            <span>30-Day Returns</span>
+          </div>
+          <div class="badge">
+            <span class="badge-icon">&#9632;</span>
+            <span>Patent Protected</span>
+          </div>
+          <div class="badge">
+            <span class="badge-icon">&#9650;</span>
+            <span>Free Shipping</span>
+          </div>
+        </div>
+
+        <!-- Key Specs -->
+        <div class="product-specs">
+          <div class="spec-row">
+            <span class="spec-label">Weight</span>
+            <span class="spec-val">Under 400g</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-label">Install Time</span>
+            <span class="spec-val">Under 30 seconds</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-label">Compatibility</span>
+            <span class="spec-val">95%+ of vehicles</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-label">Wing Range</span>
+            <span class="spec-val">0&ndash;90&deg; adjustable</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-label">Material</span>
+            <span class="spec-val">Memory foam, aluminum frame</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Feature Highlights -->
+    <section class="buy-features-section">
+      <p class="eyebrow center">Why RestWing</p>
+      <h2 class="section-title center">
+        Everything you need.<br />Nothing you don't.
+      </h2>
+      <div class="buy-features-grid">
+        <div class="buy-feature">
+          <span class="buy-feature-icon">&#8635;</span>
+          <h3>Adjustable Wings</h3>
+          <p>Rotate 0–90° to match your exact head position and body size.</p>
+        </div>
+        <div class="buy-feature">
+          <span class="buy-feature-icon">&#9889;</span>
+          <h3>Clips On in 30s</h3>
+          <p>
+            No tools. No damage. Rubber-lined clamps grip any headrest post.
+          </p>
+        </div>
+        <div class="buy-feature">
+          <span class="buy-feature-icon">&#128663;</span>
+          <h3>Universal Fit</h3>
+          <p>Works with 95%+ of vehicles — round and square post variants.</p>
+        </div>
+        <div class="buy-feature">
+          <span class="buy-feature-icon">&#129383;</span>
+          <h3>Ultra Portable</h3>
+          <p>Under 400g. Folds flat. Goes anywhere your bag goes.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- In the Box -->
+    <section class="inbox-section">
+      <div class="inbox-inner">
+        <p class="eyebrow">What's Included</p>
+        <h2>In the Box.</h2>
+        <ul class="inbox-list">
+          <li>
+            <span class="inbox-check">&#10003;</span>
+            <div>
+              <strong>RestWing Attachment</strong>
+              <p>
+                The full ergonomic headrest unit with memory foam wings and
+                clamp system.
+              </p>
+            </div>
+          </li>
+          <li>
+            <span class="inbox-check">&#10003;</span>
+            <div>
+              <strong>Carrying Pouch</strong>
+              <p>
+                A compact, soft pouch to store and protect your RestWing between
+                rides.
+              </p>
+            </div>
+          </li>
+          <li>
+            <span class="inbox-check">&#10003;</span>
+            <div>
+              <strong>Quick-Start Card</strong>
+              <p>
+                Simple illustrated instructions to get clipped on and
+                comfortable in seconds.
+              </p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="inbox-image-wrap">
+        <img
+          src="restwing-product-photo-two.png"
+          alt="RestWing product"
+          class="inbox-img"
+        />
+      </div>
+    </section>
+
+    <!-- Final CTA Banner -->
+    <section class="cta-section">
+      <p class="eyebrow gold center">Available Now</p>
+      <h2 class="cta-title">Rest Easy.<br />Rest Anywhere.</h2>
+      <p class="cta-sub">Patent-protected. Ships free. 30-day returns.</p>
+      <a href="#" class="btn-white">Order for $39</a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-top">
+        <span class="footer-brand">RestWing</span>
+        <nav class="footer-nav">
+          <a href="index.html">Home</a>
+          <a href="aboutus.html">About Us</a>
+          <a href="buynow.html">Buy Now</a>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <p>
+          Contact:
+          <a href="mailto:contactrestwing@gmail.com"
+            >contactrestwing@gmail.com</a
+          >
+        </p>
+        <p>&copy; 2026 RestWing. Patent Pending. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script type="module" src="auth-nav.js"></script>
+    <script type="module" src="inventory.js"></script>
+    <script>
+      let qty = 1;
+      const qtyNum = document.getElementById("qty-num");
+      const addToBagBtn = document.getElementById("add-to-bag-btn");
+      const buyNowBtn = document.getElementById("buy-now-btn");
+
+      function updateQtyLinks() {
+        qtyNum.textContent = qty;
+        addToBagBtn.href = "checkout.html?qty=" + qty;
+        buyNowBtn.href  = "checkout.html?qty=" + qty;
+      }
+
+      document.getElementById("qty-minus").addEventListener("click", () => {
+        if (qty > 1) { qty--; updateQtyLinks(); }
+      });
+
+      document.getElementById("qty-plus").addEventListener("click", () => {
+        if (qty < 10) { qty++; updateQtyLinks(); }
+      });
+    </script>
+  </body>
+</html>
